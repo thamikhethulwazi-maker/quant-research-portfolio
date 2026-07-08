@@ -1,0 +1,33 @@
+{
+  "strategy": "02_earnings_iv_crush",
+  "data": "synthetic earnings panel (seed=7)",
+  "cost_bps": 15.0,
+  "oos": {
+    "cagr": 0.04687896437477246,
+    "ann_return": 0.0475530811120081,
+    "ann_vol": 0.05290677172803323,
+    "sharpe": 0.8988089720622962,
+    "sortino": 0.4246338540709721,
+    "calmar": 0.28610502456601367,
+    "max_drawdown": -0.16385229321254358,
+    "var_95": -0.017615168193231452,
+    "cvar_95": -0.07418132902024206,
+    "n_periods": 116,
+    "n_trades": 116,
+    "win_rate": 0.8620689655172413,
+    "profit_factor": 3.706976770267167,
+    "avg_trade_pnl": 0.011888270278002025,
+    "avg_holding_days": 2.0
+  },
+  "bootstrap_sharpe": {
+    "point": 0.8988089720622962,
+    "lower": 0.3980654956509001,
+    "upper": 2.172049421269818,
+    "prob_positive": 1.0
+  },
+  "monte_carlo": {
+    "median_terminal": 3.994537218155666,
+    "p5_max_dd": -0.2602280976297699
+  },
+  "left_tail_worst_event": -0.15012833015679883
+}

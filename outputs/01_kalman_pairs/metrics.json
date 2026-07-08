@@ -1,0 +1,45 @@
+{
+  "strategy": "01_kalman_pairs",
+  "data": "synthetic cointegrated pair (seed=42)",
+  "cost_bps": 1.0,
+  "oos_expanding": {
+    "cagr": 0.014120757239882264,
+    "ann_return": 0.014815109974689477,
+    "ann_vol": 0.03994123272409327,
+    "sharpe": 0.37092270228687096,
+    "sortino": 0.14171311200521405,
+    "calmar": 0.240501833135459,
+    "max_drawdown": -0.05871371979077167,
+    "var_95": -0.0001,
+    "cvar_95": -0.0035031274944800953,
+    "n_periods": 1100,
+    "n_trades": 48,
+    "win_rate": 0.25,
+    "profit_factor": 41.628828086544736,
+    "avg_holding_days": 1.5625
+  },
+  "oos_rolling": {
+    "cagr": 0.0149876472811441,
+    "ann_return": 0.015582767627564293,
+    "ann_vol": 0.037719874808847496,
+    "sharpe": 0.4131182223306116,
+    "sortino": 0.15849510844185602,
+    "calmar": 0.2769442085110014,
+    "max_drawdown": -0.05411792996764808,
+    "var_95": 0.0,
+    "cvar_95": -0.00015484027093354212,
+    "n_periods": 1100
+  },
+  "bootstrap_sharpe": {
+    "point": 0.37092270228687096,
+    "lower": -0.6007693657284588,
+    "upper": 1.1888258226055703,
+    "prob_positive": 0.7955,
+    "distribution": null
+  },
+  "monte_carlo": {
+    "median_terminal": 1.0634264441472148,
+    "p5_max_dd": -0.1158232980702387,
+    "p95_max_dd": -0.029043030716615473
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "strategy": "05_cross_sectional_mr",
+  "data": "synthetic cross-sectional reversion panel (seed=31)",
+  "cost_bps": 5.0,
+  "information_coefficient": 0.04146980350839273,
+  "oos": {
+    "cagr": 0.09050651533507215,
+    "ann_return": 0.10850486577233352,
+    "ann_vol": 0.2092203155090238,
+    "sharpe": 0.5186153433921844,
+    "sortino": 0.5299352812028881,
+    "calmar": 0.3931986428392397,
+    "max_drawdown": -0.2301801315526818,
+    "var_95": -0.021000342647639465,
+    "cvar_95": -0.02774726465025446,
+    "n_periods": 1100,
+    "avg_gross_exposure": 1.990909090909091,
+    "ann_turnover": 410.5692727272727
+  },
+  "cost_sensitivity_sharpe": {
+    "rebal_1": {
+      "0": 1.78,
+      "2": 1.44,
+      "5": 0.91,
+      "10": 0.05,
+      "20": -1.68
+    },
+    "rebal_2": {
+      "0": 0.95,
+      "2": 0.71,
+      "5": 0.36,
+      "10": -0.23,
+      "20": -1.38
+    },
+    "rebal_3": {
+      "0": 0.75,
+      "2": 0.56,
+      "5": 0.28,
+      "10": -0.18,
+      "20": -1.08
+    }
+  },
+  "bootstrap_sharpe": {
+    "point": 0.5186153433921844,
+    "lower": -0.37643707204651067,
+    "upper": 1.4541690376173482,
+    "prob_positive": 0.8715
+  },
+  "wf_params": [
+    {
+      "fold": 1,
+      "lookback": 3,
+      "entry_threshold": 0.75,
+      "rebal": 1
+    },
+    {
+      "fold": 2,
+      "lookback": 3,
+      "entry_threshold": 0.75,
+      "rebal": 2
+    },
+    {
+      "fold": 3,
+      "lookback": 5,
+      "entry_threshold": 0.75,
+      "rebal": 1
+    },
+    {
+      "fold": 4,
+      "lookback": 3,
+      "entry_threshold": 0.5,
+      "rebal": 1
+    },
+    {
+      "fold": 5,
+      "lookback": 5,
+      "entry_threshold": 0.5,
+      "rebal": 1
+    }
+  ]
+}

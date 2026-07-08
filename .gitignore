@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Keep source + generated outputs tracked (they are the deliverables), but not
+# transient caches. If you prefer a lean repo, uncomment to exclude figures:
+# outputs/**/*.png
+# outputs/**/report.html

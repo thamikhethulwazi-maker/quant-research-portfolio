@@ -1,0 +1,34 @@
+{
+  "strategy": "04_pca_factor_neutral",
+  "data": "synthetic factor universe w/ idio reversion (seed=11)",
+  "cost_bps": 5.0,
+  "n_components": 3,
+  "oos": {
+    "cagr": 0.35041940416160555,
+    "ann_return": 0.3178305216954361,
+    "ann_vol": 0.1858278467617015,
+    "sharpe": 1.7103492680675019,
+    "sortino": 1.6407012178178584,
+    "calmar": 1.2670150944896068,
+    "max_drawdown": -0.2765708204153364,
+    "var_95": -0.01705786062753544,
+    "cvar_95": -0.026350763702885076,
+    "n_periods": 1250,
+    "avg_gross_exposure": 1.608,
+    "ann_turnover": 252.36288000000002
+  },
+  "avg_abs_factor_loading": {
+    "PC1": 0.059818061468459555,
+    "PC2": 0.06467905305925407,
+    "PC3": 0.05933580663733738
+  },
+  "bootstrap_sharpe": {
+    "point": 1.7103492680675019,
+    "lower": 0.7827855301139193,
+    "upper": 2.6457746707009804,
+    "prob_positive": 0.9995
+  },
+  "monte_carlo": {
+    "median_terminal": 4.407930121837174
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "strategy": "07_dispersion_vol_arb",
+  "data": "synthetic dispersion vol panel with crisis tail (seed=41)",
+  "n_oos_trades": 200,
+  "per_event_sharpe": 0.8747989059948346,
+  "win_rate": 0.865,
+  "avg_net_pnl": 0.011235709228449494,
+  "worst_event": -0.03405088804703051,
+  "avg_corr_spread": 0.09200566862314409,
+  "bootstrap_sharpe": {
+    "point": 0.8747989059948346,
+    "lower": 0.6921590722703462,
+    "upper": 1.1037192540362266,
+    "prob_positive": 1.0
+  },
+  "wf_thresholds": [
+    {
+      "fold": 1,
+      "corr_threshold": 0.45,
+      "n_trades": 40
+    },
+    {
+      "fold": 2,
+      "corr_threshold": 0.45,
+      "n_trades": 40
+    },
+    {
+      "fold": 3,
+      "corr_threshold": 0.45,
+      "n_trades": 40
+    },
+    {
+      "fold": 4,
+      "corr_threshold": 0.45,
+      "n_trades": 40
+    },
+    {
+      "fold": 5,
+      "corr_threshold": 0.45,
+      "n_trades": 40
+    }
+  ]
+}

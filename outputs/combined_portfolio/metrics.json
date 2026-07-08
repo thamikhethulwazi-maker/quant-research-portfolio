@@ -1,0 +1,55 @@
+{
+  "component": "combined_portfolio",
+  "sleeves": [
+    "Kalman_Pairs",
+    "PCA_Factor_Neutral",
+    "CrossSectional_MR"
+  ],
+  "per_sleeve_sharpe": {
+    "Kalman_Pairs": -0.9981624485969401,
+    "PCA_Factor_Neutral": 2.396518721416661,
+    "CrossSectional_MR": 0.9904238331507761
+  },
+  "correlation_matrix": {
+    "Kalman_Pairs": {
+      "Kalman_Pairs": 1.0,
+      "PCA_Factor_Neutral": 0.0216,
+      "CrossSectional_MR": -0.0065
+    },
+    "PCA_Factor_Neutral": {
+      "Kalman_Pairs": 0.0216,
+      "PCA_Factor_Neutral": 1.0,
+      "CrossSectional_MR": -0.0161
+    },
+    "CrossSectional_MR": {
+      "Kalman_Pairs": -0.0065,
+      "PCA_Factor_Neutral": -0.0161,
+      "CrossSectional_MR": 1.0
+    }
+  },
+  "equal_weight": {
+    "cagr": 0.17294287639889672,
+    "ann_return": 0.16297971770709752,
+    "ann_vol": 0.08267638020462695,
+    "sharpe": 1.9712972109291311,
+    "sortino": 2.0420566133688314,
+    "calmar": 2.146696748947007,
+    "max_drawdown": -0.0805623227797444,
+    "var_95": -0.008091099786631499,
+    "cvar_95": -0.010821662824385278,
+    "n_periods": 1000
+  },
+  "risk_parity": {
+    "cagr": 0.07038903732626767,
+    "ann_return": 0.06929338938081517,
+    "ann_vol": 0.05022727422463859,
+    "sharpe": 1.3795968515214363,
+    "sortino": 1.3092087623364845,
+    "calmar": 1.0395742885526105,
+    "max_drawdown": -0.06770948271938282,
+    "var_95": -0.004322426789124756,
+    "cvar_95": -0.007449981595997985,
+    "n_periods": 1000
+  },
+  "best_single_sleeve_sharpe": 2.396518721416661
+}
