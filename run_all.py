@@ -23,23 +23,43 @@ COMPLETED = [
 
 
 def _run(path):
-    spec = importlib.util.spec_from_file_location("run_mod", os.path.join(ROOT, path))
-    mod = importlib.util.module_from_spec(spec)
-    sys.modules["run_mod"] = mod
-    spec.loader.exec_module(mod)
-    mod.main()
+    """Load and execute a strategy's run.py module, with safe error handling."""
+    full_path = os.path.join(ROOT, path)
+    try:
+        spec = importlib.util.spec_from_file_location("run_mod", full_path)
+        if spec is None:
+            print(f"⚠️  Could not locate module at {full_path} – skipping")
+            return
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules["run_mod"] = mod
+        spec.loader.exec_module(mod)
+        
+        if hasattr(mod, "main"):
+            mod.main()
+        else:
+            print(f"⚠️  Module {path} has no 'main()' function – skipping")
+    except Exception as e:
+        print(f"❌ Error running {path}: {e}")
 
 
 if __name__ == "__main__":
+    # Run each strategy, one by one, continuing even if one fails.
     for name, path in COMPLETED:
         print("\n" + "#" * 70 + f"\n# {name}\n" + "#" * 70)
         _run(path)
+    
     # Rebuild the self-contained HTML reports from the fresh outputs.
     print("\n" + "#" * 70 + "\n# Generating per-strategy HTML reports\n" + "#" * 70)
-    from quant_framework.report import generate_report
-    for sdir in sorted(os.listdir(os.path.join(ROOT, "strategies"))):
-        sp = os.path.join(ROOT, "strategies", sdir)
-        op = os.path.join(ROOT, "outputs", sdir)
-        if os.path.isdir(sp) and os.path.exists(op):
-            print("report:", generate_report(sp, op))
+    try:
+        from quant_framework.report import generate_report
+        for sdir in sorted(os.listdir(os.path.join(ROOT, "strategies"))):
+            sp = os.path.join(ROOT, "strategies", sdir)
+            op = os.path.join(ROOT, "outputs", sdir)
+            if os.path.isdir(sp) and os.path.exists(op):
+                print("report:", generate_report(sp, op))
+    except ImportError as e:
+        print(f"❌ Could not import report module: {e}")
+    except Exception as e:
+        print(f"❌ Error generating reports: {e}")
+    
     print("\nAll strategies + portfolio regenerated. See outputs/.")
