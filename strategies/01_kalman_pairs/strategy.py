@@ -112,6 +112,14 @@ def backtest(prices_x: pd.Series,
 
     Cost: `cost_bps` one-way basis points charged on gross leg turnover.
     """
+    # Guard: ensure we have data to work with
+    if signals.empty:
+        return pd.Series(dtype=float, name="net_ret")
+    if len(prices_x) != len(prices_y):
+        raise ValueError("prices_x and prices_y must have the same length")
+    if len(signals) != len(prices_x):
+        raise ValueError("signals DataFrame must have the same length as price series")
+
     ret_x = prices_x.pct_change().fillna(0.0)
     ret_y = prices_y.pct_change().fillna(0.0)
 
@@ -119,7 +127,7 @@ def backtest(prices_x: pd.Series,
     beta = signals["beta"].shift(1).fillna(0.0)
 
     # Leg weights, gross-normalised to 1 unit of capital.
-    denom = (1.0 + beta.abs()).replace(0, np.nan)
+    denom = 1.0 + beta.abs()   # no need to replace zeros – denom is always >= 1
     w_y = sig * (1.0 / denom)
     w_x = -sig * (beta / denom)
     w_y, w_x = w_y.fillna(0.0), w_x.fillna(0.0)
