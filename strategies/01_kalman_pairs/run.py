@@ -36,6 +36,10 @@ strat = importlib.util.module_from_spec(_spec)
 sys.modules["kalman_strategy"] = strat        # required for @dataclass resolution
 _spec.loader.exec_module(strat)
 
+# Guard: ensure the strategy module loaded correctly
+if strat is None:
+    raise ImportError("Failed to load kalman_strategy module from strategy.py")
+
 OUT = os.path.join(ROOT, "outputs", "01_kalman_pairs")
 os.makedirs(OUT, exist_ok=True)
 COST_BPS = 1.0
